@@ -1,4 +1,4 @@
-package chuckman.icndb.data;
+package chuckman.jokesource.icndb.data;
 
 /**
  * Created by fernando on 27/05/16.

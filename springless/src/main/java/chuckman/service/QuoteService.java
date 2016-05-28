@@ -1,7 +1,8 @@
 package chuckman.service;
 
-import chuckman.icndb.ChuckNorrisDatabase;
-import chuckman.icndb.data.Joke;
+import chuckman.jokesource.JokeSource;
+import chuckman.jokesource.icndb.ChuckNorrisDatabaseJokeSource;
+import chuckman.jokesource.icndb.data.Joke;
 import chuckman.model.Quote;
 import chuckman.repository.QuoteRepository;
 
@@ -12,12 +13,12 @@ import java.util.List;
  */
 public class QuoteService {
 
-    private ChuckNorrisDatabase chuckNorrisDatabase;
+    private JokeSource jokeSource;
     private QuoteRepository quoteRepository;
 
     public QuoteService() {
         System.out.println("*****CREATING QuoteService*****");
-        chuckNorrisDatabase = new ChuckNorrisDatabase();
+        jokeSource = new ChuckNorrisDatabaseJokeSource();
         quoteRepository = new QuoteRepository();
     }
 
@@ -28,7 +29,7 @@ public class QuoteService {
     }
 
     public Quote createQuote (String firstName, String lastName) {
-        Joke joke = chuckNorrisDatabase.randomJoke(firstName, lastName);
+        Joke joke = jokeSource.randomJoke(firstName, lastName);
         Quote newQuote = new Quote(firstName, lastName, joke.getValue().getJoke(), joke.getValue().getId());
         quoteRepository.save(newQuote);
         System.out.println(newQuote);
