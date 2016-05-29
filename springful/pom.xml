@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>petroni</groupId>
+  <artifactId>chuckman-springful</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>chuckman-springful Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+
+    <!-- SPRINGGGGGGG -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>3.2.5.RELEASE</version>
+    </dependency>
+
+    <!-- SPRING CONTEXT ANNOTATIONS -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>3.2.5.RELEASE</version>
+    </dependency>
+
+    <!-- SPRING + RESTEASY -->
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-spring</artifactId>
+      <version>3.0.17.Final</version>
+    </dependency>
+
+    <!-- SPRING + WEB -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>3.2.5.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- ESPECIFICAÇÕES DAS APIS JAVA EE -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>6.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- RESTEASY (IMPLEMENTAÇÃO JAX-RS) -->
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-jaxrs</artifactId>
+      <version>3.0.17.Final</version>
+    </dependency>
+
+    <!-- RESTEASY + JSON -->
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-jettison-provider</artifactId>
+      <version>3.0.17.Final</version>
+    </dependency>
+
+    <!-- PARA REGISTRAR AS CLASSES DO RESTEASY NO TOMCAT STANDALONE -->
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-servlet-initializer</artifactId>
+      <version>3.0.17.Final</version>
+    </dependency>
+
+    <!-- COMUNICAÇÃO COM APIS EXTERNAS -->
+    <dependency>
+      <groupId>com.netflix.feign</groupId>
+      <artifactId>feign-core</artifactId>
+      <version>8.10.0</version>
+    </dependency>
+
+    <!-- FEIGN + JSON -->
+    <dependency>
+      <groupId>com.netflix.feign</groupId>
+      <artifactId>feign-gson</artifactId>
+      <version>8.10.0</version>
+    </dependency>
+
+    <!-- PERSISTÊNCIA MONGODB -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>3.2.2</version>
+    </dependency>
+
+    <!-- TESTES -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <finalName>chuckman-springful</finalName>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

@@ -7,10 +7,12 @@ import feign.Logger;
 import feign.Request;
 import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by fernando on 27/05/16.
  */
+@Component
 public class ChuckNorrisDatabaseJokeSource implements JokeSource {
 
     private IcndbAPI icndbAPI;
