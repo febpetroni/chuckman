@@ -1,7 +1,7 @@
 package chuckman.jokesource.icndb;
 
 import chuckman.jokesource.JokeSource;
-import chuckman.jokesource.icndb.data.Joke;
+import chuckman.jokesource.Joke;
 import feign.Feign;
 import feign.Logger;
 import feign.Request;

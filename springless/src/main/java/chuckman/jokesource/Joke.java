@@ -1,4 +1,4 @@
-package chuckman.jokesource.icndb.data;
+package chuckman.jokesource;
 
 /**
  * Created by fernando on 27/05/16.
@@ -7,6 +7,13 @@ public class Joke {
 
     private String type;
     private Value value;
+
+    public Joke() {}
+
+    public Joke(int id, String joke) {
+        this.type = "Success";
+        this.value = new Value(id, joke);
+    }
 
     public String getType() {
         return type;

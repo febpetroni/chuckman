@@ -2,7 +2,7 @@ package chuckman.service;
 
 import chuckman.jokesource.JokeSource;
 import chuckman.jokesource.icndb.ChuckNorrisDatabaseJokeSource;
-import chuckman.jokesource.icndb.data.Joke;
+import chuckman.jokesource.Joke;
 import chuckman.model.Quote;
 import chuckman.repository.QuoteRepository;
 

@@ -1,6 +1,6 @@
 package chuckman.jokesource.icndb;
 
-import chuckman.jokesource.icndb.data.Joke;
+import chuckman.jokesource.Joke;
 import feign.Param;
 import feign.RequestLine;
 
