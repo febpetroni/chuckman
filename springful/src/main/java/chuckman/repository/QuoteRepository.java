@@ -1,16 +1,15 @@
 package chuckman.repository;
 
 import chuckman.model.Quote;
-import com.mongodb.*;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,17 +18,11 @@ import java.util.List;
 @Component
 public class QuoteRepository {
 
+    @Autowired
     private MongoDatabase database;
 
     public QuoteRepository() {
         System.out.println("*****CREATING QuoteRepository*****");
-        MongoClient mongoClient = null;
-        try {
-            mongoClient = createClient();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        database = mongoClient.getDatabase("chuckman");
     }
 
     public List<Quote> findAllByName(String firstName, String lastName) {
@@ -62,24 +55,4 @@ public class QuoteRepository {
         quotes.insertOne(doc);
     }
 
-    private MongoClient createClient() throws Exception {
-        String url = "ds019053.mlab.com";
-        int port = 19053;
-        List<MongoCredential> credentials = Collections.singletonList(mongoDBCredentials());
-
-        System.out.println("Configuring MongoDB url=" + url + ", port=" + port);
-
-        return new MongoClient(
-                new ServerAddress(url, port),
-                credentials
-        );
-    }
-
-    private MongoCredential mongoDBCredentials() {
-        return MongoCredential.createCredential(
-                "chuckman-app",
-                "chuckman",
-                "nuncavaodescobrir".toCharArray()
-        );
-    }
 }
